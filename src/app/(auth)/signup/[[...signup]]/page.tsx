@@ -14,18 +14,12 @@ export const generateMetadata = async () => {
   });
 };
 
+// Server-side component handling
 const Page = () => {
-  const router = useRouter();
-  console.log("NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP ", NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP.toString());
-
-  useEffect(() => {
-    if (authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP) {
-      router.push('/login');
-    }
-  }, [router]);
-
+    console.log("authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP", authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP);
   if (authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP) {
-    return null;
+    // Redirect to login page if sign-ups are disabled
+    redirect('/login');
   }
 
   return <SignUp path="/signup" />;
