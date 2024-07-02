@@ -16,7 +16,6 @@ export const generateMetadata = async () => {
 
 // Server-side component handling
 const Page = () => {
-    console.log("authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP", authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP);
   if (authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP) {
     // Redirect to login page if sign-ups are disabled
     redirect('/login');
