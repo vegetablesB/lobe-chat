@@ -1,5 +1,5 @@
 import { SignUp } from '@clerk/nextjs';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; // Change this line
 import { useEffect } from 'react';
 import { authEnv } from '../path-to-your-authEnv'; // Adjust the import path
 
