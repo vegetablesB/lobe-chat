@@ -1,6 +1,6 @@
 'use client';
 
-import { ClerkProvider, ClerkLoaded, SignIn } from '@clerk/nextjs'; // Import ClerkLoaded and SignIn components
+import { ClerkProvider, ClerkLoaded, SignIn } from '@clerk/nextjs';
 import { PropsWithChildren, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -16,26 +16,25 @@ const Clerk = memo(({ children }: PropsWithChildren) => {
 
   const localization = useMemo(() => getResourceBundle(language, 'clerk'), [language]);
   const isSignUpDisabled = authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP;
+
   return (
     <ClerkProvider appearance={appearance} localization={localization}>
       {children}
       {isSignUpDisabled ? (
         <ClerkLoaded>
           <SignIn
-            path="/sign-in"
             appearance={{
               elements: {
                 footerAction: { display: "none" },
               },
             }}
+            path="/sign-in"
           />
         </ClerkLoaded>
       ) : (
         <UserUpdater />
       )}
     </ClerkProvider>
-
-
   );
 });
 
