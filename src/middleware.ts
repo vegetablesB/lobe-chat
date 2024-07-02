@@ -57,7 +57,7 @@ export default authEnv.NEXT_PUBLIC_ENABLE_CLERK_AUTH
         // https://github.com/lobehub/lobe-chat/pull/3084
         clockSkewInMs: 60 * 60 * 1000,
         signInUrl: '/login',
-        signUpUrl: '/signup',
+        signUpUrl: authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP ? '/signup' : '/login',
       },
     )
   : authEnv.NEXT_PUBLIC_ENABLE_NEXT_AUTH
