@@ -16,6 +16,7 @@ export const generateMetadata = async () => {
 
 const Page = () => {
   const router = useRouter();
+  console.log("NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP ", NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP.toString());
 
   useEffect(() => {
     if (authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP) {
