@@ -58,7 +58,6 @@ export default authEnv.NEXT_PUBLIC_ENABLE_CLERK_AUTH
         clockSkewInMs: 60 * 60 * 1000,
         signInUrl: '/login',
         signUpUrl: authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP ? '/signup' : '/login',
-        ignoredRoutes: authEnv.NEXT_PUBLIC_DISABLE_CLERK_SIGN_UP ? ['/signup'] : [],
       },
     )
   : authEnv.NEXT_PUBLIC_ENABLE_NEXT_AUTH
