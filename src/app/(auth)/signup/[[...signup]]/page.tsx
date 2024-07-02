@@ -1,7 +1,6 @@
 import { SignUp } from '@clerk/nextjs';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { authEnv } from '../path-to-your-authEnv'; // Adjust the import path
+import { redirect } from 'next/navigation';
+import { authEnv } from '@/config/auth';
 
 import { metadataModule } from '@/server/metadata';
 import { translation } from '@/server/translation';
